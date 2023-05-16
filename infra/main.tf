@@ -12,16 +12,11 @@ module "static_website" {
   bucket_id = module.s3_bucket.bucket_id
 }
 
-resource "aws_s3_object" "index" {
-  bucket       = module.s3_bucket.bucket_id
-  key          = "index.html"
-  source       = "../src/index.html"
-  content_type = "text/html"
-}
+resource "aws_s3_object" "files" {
+  for_each = toset(["index.html", "error.html"])
 
-resource "aws_s3_object" "error" {
   bucket       = module.s3_bucket.bucket_id
-  key          = "error.html"
-  source       = "../src/error.html"
+  key          = each.key
+  source       = "../src/${each.key}"
   content_type = "text/html"
 }
