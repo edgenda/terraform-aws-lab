@@ -13,10 +13,10 @@ module "static_website" {
 }
 
 resource "aws_s3_object" "files" {
-  for_each = toset(["index.html", "error.html"])
+  for_each = toset(["index.html", "error.html", "main.css"])
 
   bucket       = module.s3_bucket.bucket_id
   key          = each.key
   source       = "../src/${each.key}"
-  content_type = "text/html"
+  content_type = "text/${split(".", each.key)[1]}"
 }
