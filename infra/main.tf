@@ -6,6 +6,12 @@ module "s3_bucket" {
   bucket_name = "s3-aws-tf-lab-${random_pet.pet.id}"
 }
 
+module "static_website" {
+  source = "./static_website"
+
+  bucket_id = module.s3_bucket.bucket_id
+}
+
 resource "aws_s3_object" "index" {
   bucket       = module.s3_bucket.bucket_id
   key          = "index.html"
