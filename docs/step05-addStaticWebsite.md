@@ -149,4 +149,4 @@ Vous pouvez maintenant lancer un `terraform apply` pour appliquer tous ces chang
 ![Le site dans le navigateur](/docs/assets/step05-browser.png)
 
 ## Etape suivante
-Pour terminer ce lab on va ajouter une page d'erreur et une feuille de style en abordant des fonctionnalités plus avancées de Terraform, c'est par [ici](/docs/step06-addErrorPageAndCss.md)
+Pour terminer ce lab on va ajouter une page d'erreur et une feuille de style en abordant des fonctionnalités plus avancées de Terraform, c'est par [ici](/docs/step06-addErrorPageAndCss.md).

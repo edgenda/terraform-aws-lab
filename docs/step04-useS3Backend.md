@@ -30,3 +30,6 @@ Terraform a détecté la présence du state local et propose de migrer automatiq
 Vous pouvez lancer un `terraform plan` ou `terraform apply` pour vérifier la bonne communication avec le nouveau backend: il ne devrait pas y avoir de changement à appliquer.  
 
 A noter qu'au niveau de l'authentification, dans l'environnement Cloud9 il n'y a rien de particulier à faire puisque tout est préconfiguré par le service en utilisant l'identité associée: pas besoin de gérer de credentials dans le cadre de ce lab.
+
+## Etape suivante
+Après ce changement de backend on peut passer à l'étape suivante avec l'activation du site [web statique](/docs/step05-addStaticWebsite.md).
