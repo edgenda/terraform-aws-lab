@@ -18,3 +18,10 @@ resource "aws_s3_object" "index" {
   source       = "../src/index.html"
   content_type = "text/html"
 }
+
+resource "aws_s3_object" "error" {
+  bucket       = module.s3_bucket.bucket_id
+  key          = "error.html"
+  source       = "../src/error.html"
+  content_type = "text/html"
+}
