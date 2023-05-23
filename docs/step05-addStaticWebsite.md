@@ -86,7 +86,12 @@ data "aws_iam_policy_document" "allow_access_from_another_account" {
 ```
 Il s'agit d'une [_data source_](https://developer.hashicorp.com/terraform/language/data-sources), un concept de Terraform qui permet de référencer une ressource existante, qui peut être créée en dehors de Terraform ou dans un autre module.  
 Les _data sources_ sont souvent utilisées pour récupérer des informations d'une ressource à partir de son id. Ici on va utiliser une _data source_ sur le bucket pour récupérer son ARN (pour [Amazon Resource Name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)).  
-Et on va utiliser une autre data source pour construire la policy comme dans l'exemple du registry, ce qui donne les ajouts suivants:
+
+> On utilise ici une _data source_ pour l'exemple mais on aurait aussi pu exposer l'_ARN_ du bucket en tant qu'_output_ du module `s3_bucket`, et le passer en _variable_ au module `static_website`.  
+D'une manière générale si une ressource est créée dans un module A et utilisée dans un module B, il vaut mieux utiliser les _outputs_ pour faire passer les informations entre les modules (cela permet à Terraform de mieux calculer les dépendances).  
+Les _data sources_ doivent être réservées pour référencer en lecture une ressource créée en dehors de notre configuration Terraform.
+
+On va utiliser une autre data source pour construire la policy comme dans l'exemple du registry, ce qui donne les ajouts suivants:
 <details>
 <summary>Ajout dans le fichier <code>static_website/main.tf</code></summary>
 

@@ -36,8 +36,9 @@ Enfin on précise dans l'élément `terraform/required_version` la version de Te
 > Pour en savoir plus sur les providers, consultez [cette page](https://developer.hashicorp.com/terraform/language/providers) de la documentation.  
 Pour comprendre la syntaxe du `required_version`, [c'est par là](https://developer.hashicorp.com/terraform/language/expressions/version-constraints).
 
-## Initialisation de Terraform
+> Un provider peut être configuré plusieurs fois avec des paramètres différents avec la fonctionnalité d'[alias](https://developer.hashicorp.com/terraform/language/providers/configuration#alias-multiple-provider-configurations). Avec AWS cela permet d'avoir des providers qui utilisent des régions ou des comptes AWS différents.
 
+## Initialisation de Terraform
 Placez-vous dans le dossier infra depuis le terminal de Cloud9 et lancez la commande `terraform init`.  
 Vous obtenez l'output suivant:
 ```shell
