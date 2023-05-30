@@ -1,6 +1,6 @@
 # Etape 4: Déplacer le backend dans AWS S3
 
-Dans cet étape on va déplacer notre state dans un nouveau bucket S3 et donc remplacer le backend _local_ par le backend [s3](https://developer.hashicorp.com/terraform/language/settings/backends/s3).  
+Dans cette étape on va déplacer notre state dans un nouveau bucket S3 et donc remplacer le backend _local_ par le backend [s3](https://developer.hashicorp.com/terraform/language/settings/backends/s3).  
 
 ## Création d'un bucket S3 pour stocker notre state
 
