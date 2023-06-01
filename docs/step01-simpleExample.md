@@ -8,6 +8,8 @@ ec2-user:~/environment/terraform-aws-lab/infra ((step00-startHere)) $
 Tout le code HCL/Terraform va se trouver dans le dossier `infra`, qui pour le moment contient un fichier `versions.tf` avec le contenu suivant:
 ```hcl
 terraform {
+  required_version = "~> 1.4.0"
+  
   required_providers {
     aws = {
       source  = "hashicorp/aws"
