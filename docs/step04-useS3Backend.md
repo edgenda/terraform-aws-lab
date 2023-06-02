@@ -17,7 +17,9 @@ terraform {
     # ...
   }
 
-  backend "s3" {}
+  backend "s3" {
+    region = "ca-central-1"
+  }
 }
 ```
 Il existe différentes façon de [configurer](https://developer.hashicorp.com/terraform/language/settings/backends/configuration) le backend dans la configuration Terraform. Chaque backend a ses spécificités, dans le cas du backend [s3](https://developer.hashicorp.com/terraform/language/settings/backends/s3#configuration) seuls le nom du bucket et la région sont requis.  
