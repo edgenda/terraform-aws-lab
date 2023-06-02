@@ -10,7 +10,9 @@ terraform {
     }
   }
 
-  backend "s3" {}
+  backend "s3" {
+    region = "ca-central-1"
+  }
 }
 
 provider "aws" {
